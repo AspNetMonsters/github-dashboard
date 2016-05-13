@@ -2,3 +2,4 @@ source https://nuget.org/api/v2
 
 nuget Suave 
 nuget OctoKit
+nuget Newtonsoft.Json
