@@ -1,22 +1,37 @@
+import {inject} from 'aurelia-framework';
+import {HttpClient} from 'aurelia-fetch-client';
+import 'fetch';
 
+@inject(HttpClient)
 export class Projects {
+    projects: Array<Project> = [];
+    http;
     
-    projects: Array<Project> = [ new Project(), new Project()];
-    
+    constructor(http) {
+      this.http = http;
+    }
+
+    activate() {
+      return this.http.fetch('projects')
+        .then(response => response.json())
+        .then(projects => this.projects = projects);
+    }
+
 }
 
-class Project {
+export class Project {
+    name: string;
+    url: string;
+    pullRequests: Array<PullRequest>;
 
-    name: string = "Service Layer";
-    url: string = "https://github.com/MarletteFunding/service-layer";
-    pullRequests: Array<PullRequest> = [
-        new PullRequest(172, "Add even more logging - my god we love logging", "https://github.com/MarletteFunding/service-layer/pull/172"),
-        new PullRequest(178, "For Simon to rebase", "https://github.com/MarletteFunding/service-layer/pull/178"),
-        ];
-
+    constructor(name: string, url: string, pullRequests: Array<PullRequest>){
+      this.name = name;
+      this.url = url;
+      this.pullRequests = pullRequests;
+    }
 }
 
-class PullRequest{
+export class PullRequest{
     id: number;
     name: string;
     url: string;
@@ -26,5 +41,5 @@ class PullRequest{
         this.name = name;
         this.url = url;
     }
-    
+
 }
