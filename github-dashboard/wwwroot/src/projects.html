@@ -1,0 +1,21 @@
+
+<template>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Project Name</th>
+                <th>Outstanding Pull Requests</th>
+            </tr>
+        </thead>
+        <tr repeat.for="project of projects">
+            <td>${project.name}</td>
+            <td>
+                <div repeat.for="pr of project.pullRequests">
+                    <div style="display:block; height:40px">${pr.name} <a href="${pr.url}" class="btn btn-success btn-sm pull-right">View ${pr.id}</a></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</template>
+
+
