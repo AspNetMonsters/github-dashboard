@@ -1,0 +1,45 @@
+
+
+{
+  "projects" :
+  [
+    {
+      "name":"Service Layer",
+      "url":"https://github.com/MarletteFunding/service-layer",
+      "pullRequests":[
+        {
+          "id":172,
+          "name":"Add even more logging - my god we love logging",
+          "url":"https://github.com/MarletteFunding/service-layer/pull/172"
+        },
+        {
+          "id":178,
+          "name":"For Simon to rebase",
+          "url":"https://github.com/MarletteFunding/service-layer/pull/178"
+        }
+      ]
+    },
+    {
+      "name":"Funnel Services",
+      "url":"https://github.com/MarletteFunding/funnel-services",
+      "pullRequests":[
+        {
+          "id":211,
+          "name":"Fix that thing where s#!t goes south",
+          "url":"https://github.com/MarletteFunding/funnel-services/pull/172"
+        },
+        {
+          "id":228,
+          "name":"Fix that thing that Corey broke",
+          "url":"https://github.com/MarletteFunding/funnel-services/pull/228"
+        },
+        {
+          "id":236,
+          "name":"Also for Simon to rebase",
+          "url":"https://github.com/MarletteFunding/funnel-services/pull/236"
+        }
+      ]
+    }
+  ]
+}
+
